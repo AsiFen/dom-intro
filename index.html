@@ -5,6 +5,13 @@
     <title></title>
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+
+      .warning{
+        background-color: rgb(248, 245, 73);
+        padding: 0.5em;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -94,15 +101,15 @@
               <table>
                 <tr>
                   <td>Call total</td>
-                  <td>R<span class="callTotalOne">27.50</span></td>
+                  <td>R<span class="callTotalOne">0.0</span></td>
                 </tr>
                 <tr>
                   <td>SMS total</td>
-                  <td>R<span class="smsTotalOne">13.75</span></td>
+                  <td>R<span class="smsTotalOne">0.00</span></td>
                 </tr>
                 <tr>
                   <td>Total</td>
-                  <td class="red">R<span class="totalOne">41.25</span></td>
+                  <td class="red">R<span class="totalOne">0.00</span></td>
                 </tr>
               </table>
             </div>
@@ -150,15 +157,15 @@
                   <table>
                     <tr>
                       <td>Call total</td>
-                      <td>R<span class="callTotalTwo">34.50</span></td>
+                      <td>R<span class="callTotalTwo">0.00</span></td>
                     </tr>
                     <tr>
                       <td>SMS total</td>
-                      <td>R<span class="smsTotalTwo">3.00</span></td>
+                      <td>R<span class="smsTotalTwo">0.00</span></td>
                     </tr>
                     <tr >
                       <td>Total</td>
-                      <td class="orange" >R<span class="totalTwo">37.50</span></td>
+                      <td class="orange" >R<span class="totalTwo">0.00</span></td>
                     </tr>
                   </table>
             </div>
@@ -185,42 +192,42 @@
             <div class="six columns">
               <h5>Bill type</h5>
               <label class="">
-                <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings">
+                <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings" value='sms' >
                 <span class="label-body">Call</span>
               </label>
               <label class="">
-                <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings">
+                <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings" value="call" >
                 <span class="label-body" >SMS</span>
               </label>
-              <button class="button-primary" type="button" name="button">Add</button>
+              <button class="button-primary btn" type="button" name="button">Add</button>
 
               <h5>Totals</h5>
                   <table>
                     <tr>
-                      <td>Call total</td>
-                      <td>R<span class="callTotalSettings">34.00</span> </td>
+                      <td>SMS total</td>
+                      <td>R<span class="callTotalSettings">0.00</span> </td>
                     </tr>
                     <tr>
-                      <td>SMS total</td>
-                      <td>R<span class="smsTotalSettings">7.35</span> </td>
+                      <td>Call total</td>
+                      <td>R<span class="smsTotalSettings">0.00</span> </td>
                     </tr>
                     <tr>
                       <td>Total</td>
-                      <td> R<span class="totalSettings">41.35</span> </td>
+                      <td> R<span class="totalSettings">0.00</span> </td>
                     </tr>
                   </table>
 
             </div>
             <div class="six columns">
               <h5>Settings</h5>
-              <label for="exampleEmailInput">Call cost</label>
-              <input class="u-full-width callCostSetting" type="number" placeholder="eg. 2.55">
               <label for="exampleEmailInput">SMS cost</label>
-              <input class="u-full-width smsCostSetting" type="number" placeholder="eg. 0.65" >
+              <input class="u-full-width callCostSetting" type="text" placeholder="eg. 2.55" value="">
+              <label for="exampleEmailInput">Call cost</label>
+              <input class="u-full-width smsCostSetting" type="text" placeholder="eg. 0.65" value="">
               <label for="">Warning level</label>
-              <input class="u-full-width warningLevelSetting " type="number" placeholder="eg. 30.00" class="warningLevel" >
+              <input class="u-full-width warningLevelSetting" type="number" placeholder="eg. 30.00" class="warningLevel" value="" >
               <label for="">Critical level</label>
-              <input class="u-full-width criticalLevelSetting" type="number" placeholder="eg. 65.00" >
+              <input class="u-full-width criticalLevelSetting" type="number" placeholder="eg. 65.00" value="">
               <button class="button-primary updateSettings" type="button" name="button">Update settings</button>
 
             </div>
