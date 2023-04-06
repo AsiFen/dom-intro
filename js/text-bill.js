@@ -11,7 +11,7 @@ var callsTotal = 0;
 var smsTotal = 0;
 
 function texBillTotal() {
-    var billTypeEntered = billTypeText.value.trim();
+    var billTypeEntered = billTypeText.value.trim().toLowerCase();
 
     if (billTypeEntered == 'call') {
         callsTotal += 2.75
