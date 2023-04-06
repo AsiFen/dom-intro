@@ -4,6 +4,7 @@ const calculateBtnElem = document.querySelector('.calculateBtn')
 var billStringElem = document.querySelector('.billString')
 //get a reference to the billString
 var billTotalElem = document.querySelector('.billTotal')
+var clearBtn = document.querySelector('.clear')
 //create the function that will be called when the calculate button is pressed
 function calculateBtnClicked() {
 
@@ -34,6 +35,14 @@ function calculateBtnClicked() {
         billTotalElem.classList.add("warning");
     }
 }
+
+function refreshInput (){
+    billTotalElem.innerHTML = "0.00";
+    billStringElem.value = '';
+    billTotal = '';
+
+}
+clearBtn.addEventListener("click", refreshInput);
 
 //  * this function should read the string value entered - split it on a comma.
 //  * loop over all the entries in the the resulting list

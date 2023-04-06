@@ -6,6 +6,7 @@ var addBillBtn = document.querySelector('.addToBillBtn');
 var callTotalElem = document.querySelector('.callTotalOne');
 var smsTotalElem = document.querySelector('.smsTotalOne');
 var totalElem = document.querySelector('.totalOne');
+var btnToClear = document.querySelector('.btnClear');
 //add an event listener for when the add button is pressed
 var callsTotal = 0;
 var smsTotal = 0;
@@ -20,21 +21,29 @@ function texBillTotal() {
     else if (billTypeEntered === 'sms') {
         smsTotal += 0.75
     }
-        /// updating the totals seen on screen
-        callTotalElem.innerHTML = callsTotal.toFixed(2);
-        smsTotalElem.innerHTML = smsTotal.toFixed(2);
-        var totalCost = callsTotal + smsTotal;
-        totalElem.innerHTML = totalCost.toFixed(2)
-   
+    /// updating the totals seen on screen
+    callTotalElem.innerHTML = callsTotal.toFixed(2);
+    smsTotalElem.innerHTML = smsTotal.toFixed(2);
+    var totalCost = callsTotal + smsTotal;
+    totalElem.innerHTML = totalCost.toFixed(2)
 
-    if (totalCost >= 50){
+
+    if (totalCost >= 50) {
         // adding the danger class will make the text red
         totalElem.classList.add("danger");
     }
-    else if (totalCost >= 30){
+    else if (totalCost >= 30) {
         totalElem.classList.add("warning");
     }
 }
+
+function clearClicked() {
+    callTotalElem.innerHTML = '0.00';
+    smsTotalElem.innerHTML = '0.00';
+    totalElem.innerHTML = '0.00';
+
+}
+btnToClear.addEventListener("click", clearClicked);
 //in the event listener check if the value in the bill type textbox is 'sms' or 'call'
 // * add the appropriate value to the running total
 // * add nothing for invalid values that is not 'call' or 'sms'.

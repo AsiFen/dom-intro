@@ -10,6 +10,7 @@ var callCostElem = document.querySelector('.callCostSetting');
 var warningLevelElem = document.querySelector('.warningLevelSetting');
 var criticalLevelElem = document.querySelector('.criticalLevelSetting');
 var UpdateBtn = document.querySelector('.updateSettings');
+var btnClear = document.querySelector(".clear-btn");
 
 // create a variables that will keep track of all three totals.
 var smsTotal_rd = 0;
@@ -47,7 +48,7 @@ function btnAddClick() {
             }
 
         }
-    
+
     }
     grandTotal = callTotal_rd + smsTotal_rd;
 
@@ -67,6 +68,22 @@ function btnAddClick() {
     total_set.innerHTML = grandTotal.toFixed(2);
 }
 
+function clearInput() {
+    callTotal_set.innerHTML = '0.00';
+    smsTotal_set.innerHTML = '0.00';
+    total_set.innerHTML = '0.00';
+
+    smsTotal_rd = 0;
+    callTotal_rd = 0;
+    smsCost = 0;
+    callCost = 0; warningLevel = 0;
+    criticalLevel = 0;
+    grandTotal = 0;
+    total_set.classList.remove('warning');
+    total_set.classList.remove('danger')
+
+}
+btnClear.addEventListener('click', clearInput);
 //add an event listener for when the 'Update settings' button is pressed
 UpdateBtn.addEventListener("click", btnUpdateClicked);
 

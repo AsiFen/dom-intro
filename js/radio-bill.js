@@ -6,6 +6,7 @@ var btnAddBill = document.querySelector('.radioBillAddBtn');
 var callTotalElem2 = document.querySelector('.callTotalTwo');
 var smsTotalElem2 = document.querySelector('.smsTotalTwo');
 var totalElem2 = document.querySelector('.totalTwo');
+var refresh = document.querySelector(".refresh-btn");
 
 var totalSms = 0;
 var totalCall = 0;
@@ -38,6 +39,13 @@ function btnAddClicked() {
         totalElem2.classList.add("warning");
     }
 }
+
+function clear(){
+    callTotalElem2.innerHTML ="0.00"; 
+    smsTotalElem2.innerHTML ="0.00";
+    totalElem2.innerHTML ="0.00";
+}
+refresh.addEventListener("click", clear);
 //in the event listener get the value from the billItemTypeRadio radio buttons
 // * add the appropriate value to the running total
 // * add nothing for invalid values that is not 'call' or 'sms'.
