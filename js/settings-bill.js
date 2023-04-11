@@ -29,7 +29,7 @@ function btnUpdateClicked() {
     warningLevel = warningLevelElem.value;
     criticalLevel = criticalLevelElem.value;
 
-    if (grandTotal < warningLevel){
+    if (grandTotal < warningLevel) {
         total_set.classList.remove('warning');
 
     }
@@ -68,12 +68,12 @@ function btnAddClick() {
     }
     grandTotal = callTotal_rd + smsTotal_rd;
 
-    if (grandTotal < warningLevel){
+    if (grandTotal <= warningLevel) {
         total_set.classList.remove('warning');
         total_set.classList.remove('danger');
     }
 
-    if (grandTotal >= warningLevel && grandTotal < criticalLevel) {
+    else if (grandTotal >= warningLevel && grandTotal < criticalLevel) {
         console.log("warning level " + grandTotal)
         total_set.classList.add('warning');
         total_set.classList.remove('danger');
