@@ -29,6 +29,22 @@ function btnUpdateClicked() {
     warningLevel = warningLevelElem.value;
     criticalLevel = criticalLevelElem.value;
 
+    if (grandTotal < warningLevel){
+        total_set.classList.remove('warning');
+
+    }
+
+    if (grandTotal >= warningLevel && grandTotal < criticalLevel) {
+        console.log("warning level " + grandTotal)
+        total_set.classList.add('warning');
+        total_set.classList.remove('danger');
+
+    }
+    else if (grandTotal >= criticalLevel) {
+        total_set.classList.add('danger');
+        total_set.classList.remove('warning');
+    }
+
 }
 // function that will calculate totals for radio btn group
 function btnAddClick() {
@@ -55,12 +71,12 @@ function btnAddClick() {
     if (grandTotal >= warningLevel && grandTotal < criticalLevel) {
         console.log("warning level " + grandTotal)
         total_set.classList.add('warning');
-        total_set.classList.remove('danger')
+        total_set.classList.remove('danger');
 
     }
     else if (grandTotal >= criticalLevel) {
         total_set.classList.add('danger');
-        total_set.classList.remove('warning')
+        total_set.classList.remove('warning');
     }
 
     callTotal_set.innerHTML = callTotal_rd.toFixed(2);
