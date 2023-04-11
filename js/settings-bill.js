@@ -31,6 +31,7 @@ function btnUpdateClicked() {
 
     if (grandTotal < warningLevel) {
         total_set.classList.remove('warning');
+        total_set.classList.remove('danger');
 
     }
 
