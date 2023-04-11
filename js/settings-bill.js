@@ -68,7 +68,7 @@ function btnAddClick() {
     }
     grandTotal = callTotal_rd + smsTotal_rd;
 
-    if (grandTotal <= warningLevel) {
+    if (grandTotal < warningLevel || grandTotal === 0.00) {
         total_set.classList.remove('warning');
         total_set.classList.remove('danger');
     }
