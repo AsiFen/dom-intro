@@ -98,11 +98,18 @@ function clearInput() {
     smsTotal_rd = 0;
     callTotal_rd = 0;
     smsCost = 0;
-    callCost = 0; warningLevel = 0;
+    callCost = 0;
+     warningLevel = 0;
     criticalLevel = 0;
     grandTotal = 0;
     total_set.classList.remove('warning');
     total_set.classList.remove('danger')
+    callCostElem.value = "";
+    smsCostElem.value = "";
+    warningLevelElem.value = "";
+    criticalLevelElem.value = "";
+
+
 
 }
 btnClear.addEventListener('click', clearInput);
