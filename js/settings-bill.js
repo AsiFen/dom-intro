@@ -52,7 +52,7 @@ function btnAddClick() {
     var checkedItem = document.querySelector('input[class="billItemTypeWithSettings"]:checked');
     if (checkedItem) {
         var valueOfCheckedtItem = checkedItem.value;
-        console.log(criticalLevel)
+        //    console.log(criticalLevel)
         if (grandTotal < criticalLevel) {
             // * add the appropriate value to the call / sms total
             if (valueOfCheckedtItem == 'sms') {
@@ -99,7 +99,7 @@ function clearInput() {
     callTotal_rd = 0;
     smsCost = 0;
     callCost = 0;
-     warningLevel = 0;
+    warningLevel = 0;
     criticalLevel = 0;
     grandTotal = 0;
     total_set.classList.remove('warning');
@@ -108,8 +108,6 @@ function clearInput() {
     smsCostElem.value = "";
     warningLevelElem.value = "";
     criticalLevelElem.value = "";
-
-
 
 }
 btnClear.addEventListener('click', clearInput);

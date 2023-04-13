@@ -212,22 +212,22 @@
               <h5>Bill type</h5>
               <label class="">
                 <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings" value='sms' >
-                <span class="label-body">Call</span>
+                <span class="label-body">SMS</span>
               </label>
               <label class="">
                 <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings" value="call" >
-                <span class="label-body" >SMS</span>
+                <span class="label-body" >Call</span>
               </label>
               <button class="button-primary btn" type="button" name="button">Add</button>
 
               <h5>Totals</h5>
                   <table>
                     <tr>
-                      <td>SMS total</td>
+                      <td>Call total</td>
                       <td>R<span class="callTotalSettings">0.00</span> </td>
                     </tr>
                     <tr>
-                      <td>Call total</td>
+                      <td>SMS total</td>
                       <td>R<span class="smsTotalSettings">0.00</span> </td>
                     </tr>
                     <tr>
@@ -239,9 +239,9 @@
             </div>
             <div class="six columns">
               <h5>Settings</h5>
-              <label for="exampleEmailInput">SMS cost</label>
-              <input class="u-full-width callCostSetting" type="text" placeholder="eg. 2.55" value="">
               <label for="exampleEmailInput">Call cost</label>
+              <input class="u-full-width callCostSetting" type="text" placeholder="eg. 2.55" value="">
+              <label for="exampleEmailInput">SMS cost</label>
               <input class="u-full-width smsCostSetting" type="text" placeholder="eg. 0.65" value="">
               <label for="">Warning level</label>
               <input class="u-full-width warningLevelSetting" type="text" placeholder="eg. 30.00" value="" >
@@ -258,7 +258,7 @@
     <script src="js/calculate-bill.js" charset="utf-8"></script>
     <script src="js/text-bill.js" charset="utf-8"></script>
     <script src="js/radio-bill.js" charset="utf-8"></script>
-    <script src="js/settings-bill.js" charset="utf-8"></script>
+    <script src="js/factory_function/settings-bill.js" charset="utf-8"></script>
 
   </body>
 </html>
