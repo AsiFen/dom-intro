@@ -38,7 +38,6 @@ function btnUpdateClicked() { //when update is clicked the values of the DOM ele
   //  total_set.classList.remove('warning');
 
     if (total < billSetting.getWarningLevel()) {
-        alert(billSetting.totalClassName())
         total_set.classList.remove(billSetting.totalClassName());
         total_set.classList.remove(billSetting.totalClassName1());
     }
@@ -61,7 +60,6 @@ function btnAddClick() {
     if (checkedItem) {
         var value_checked = checkedItem.value;
 
-        console.log(value_checked)
 
         if (value_checked == 'sms') {
             billSetting.sendSms()
