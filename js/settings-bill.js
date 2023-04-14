@@ -89,9 +89,9 @@ function btnAddClick() {
         total_set.classList.remove(billSetting.totalClassName());
     }
 
-    total_set.innerHTML = billSetting.getTotalCost()
-    callTotal_set.innerHTML = billSetting.getTotalCallCost()
-    smsTotal_set.innerHTML = billSetting.getTotalSmsCost()
+    total_set.innerHTML = billSetting.getTotalCost().toFixed(2)
+    callTotal_set.innerHTML = billSetting.getTotalCallCost().toFixed(2)
+    smsTotal_set.innerHTML = billSetting.getTotalSmsCost().toFixed(2)
 
 }
 
