@@ -87,8 +87,6 @@ function settingsBill() {
         setSmsCost,
         getCallCost,
         getSmsCost,
-        //theCriticalLevel,
-        //theWarningLevel,
         getCriticalLevel,
         getWarningLevel,
         setCriticalLevel,
