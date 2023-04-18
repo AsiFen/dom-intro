@@ -84,4 +84,4 @@ function btnAddClick() {
 
 //event listeners
 btnAdd.addEventListener('click', btnAddClick)
-UpdateBtn.addEventListener('click', btnUpdateClicked)
+updateBtn.addEventListener('click', btnUpdateClicked)
