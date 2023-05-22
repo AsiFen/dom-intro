@@ -16,15 +16,13 @@ var updateBtn = document.querySelector('.updateSettings');
 var total = 0;
 //create function to plug factory function items back to 
 function btnUpdateClicked() { //when update is clicked the values of the DOM elements are stored
-    var sms = smsCostElem.value
-    var call = callCostElem.value
-    var c_level = criticalLevelElem.value
-    var w_level = warningLevelElem.value
+    var sms = Number(smsCostElem.value)
+    var call = Number(callCostElem.value)
 
     billSetting.setSmsCost(sms)
     billSetting.setCallCost(call)
-    billSetting.setCriticalLevel(c_level)
-    billSetting.setWarningLevel(w_level)
+    billSetting.setCriticalLevel(criticalLevelElem.value)
+    billSetting.setWarningLevel( warningLevelElem.value)
 
     if (total < billSetting.getWarningLevel()) {
         total_set.classList.remove(billSetting.totalClassName());
@@ -48,7 +46,6 @@ function btnAddClick() {
 
     if (checkedItem) {
         var value_checked = checkedItem.value;
-
 
         if (value_checked == 'sms') {
             billSetting.sendSms()
@@ -84,4 +81,4 @@ function btnAddClick() {
 
 //event listeners
 btnAdd.addEventListener('click', btnAddClick)
-UpdateBtn.addEventListener('click', btnUpdateClicked)
+updateBtn.addEventListener('click', btnUpdateClicked)
