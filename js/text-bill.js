@@ -7,7 +7,7 @@ var callTotalElem = document.querySelector('.callTotalOne');
 var smsTotalElem = document.querySelector('.smsTotalOne');
 // var totalElem = document.querySelector('.totalOne');
 var btnToClear = document.querySelector('.btnClear');
-
+    var userDataHTML = document.querySelector('.userData')
 var templateSource = document.querySelector('.totalTemplate').innerHTML;
 var templateFunction = Handlebars.compile(templateSource)
 
@@ -33,6 +33,13 @@ function texBillTotal() {
     // totalElem.innerHTML = totalCost.toFixed(2)
     
     
+    var userDataHTML = document.querySelector('.userData')
+    var getTotal = templateFunction({totalCost: totalCost.toFixed(2)})
+    console.log(getTotal)
+    console.log(totalCost);
+    console.log({totalCost});
+    userDataHTML.innerHTML = getTotal
+
     if (totalCost >= 50) {
         // adding the danger class will make the text red
         totalElem.classList.add("danger");
@@ -42,17 +49,13 @@ function texBillTotal() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    var userDataHTML = document.querySelector('.userData')
-    var getTotal = templateFunction(totalCost.toFixed(2))
-    userDataHTML.innerHTML = getTotal
-})
+
 
 
 function clearClicked() {
     callTotalElem.innerHTML = '0.00';
     smsTotalElem.innerHTML = '0.00';
-    totalElem.innerHTML = '0.00';
+    // totalElem.innerHTML = '0.00';
 
 }
 btnToClear.addEventListener("click", clearClicked);
@@ -61,3 +64,10 @@ btnToClear.addEventListener("click", clearClicked);
 // * add nothing for invalid values that is not 'call' or 'sms'.
 // * display the latest total on the screen
 addBillBtn.addEventListener('click', texBillTotal);
+document.addEventListener('DOMContentLoaded', function () {
+    var getTotal = templateFunction({totalCosts: totalCost})
+    // console.log(getTotal)
+    // console.log(totalCost);
+    // console.log({totalCosts});
+    userDataHTML.innerHTML = getTotal
+})

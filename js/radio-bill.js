@@ -7,7 +7,7 @@ var callTotalElem2 = document.querySelector('.callTotalTwo');
 var smsTotalElem2 = document.querySelector('.smsTotalTwo');
 var totalElem2 = document.querySelector('.totalTwo');
 var refresh = document.querySelector(".refresh-btn");
-
+var userDataElem = document.querySelector('.userData2')
 var tempSource = document.querySelector('.template').innerHTML;
 var totalTemp = Handlebars.compile(tempSource)
 
@@ -35,6 +35,9 @@ function btnAddClicked() {
     totalCost= totalCall + totalSms;
     // totalElem2.innerHTML = totalCost.toFixed(2);
 
+    var totalCost2 = totalTemp({totalCost: totalCost})
+    userDataElem.innerHTML = totalCost2
+
     if (totalCost >= 50){
         // adding the danger class will make the text red
         totalElem2.classList.add("danger");
@@ -46,8 +49,7 @@ function btnAddClicked() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    var userDataElem = document.querySelector('.userData2')
-    var totalCost2 = totalTemp(totalCost.toFixed(2))
+    var totalCost2 = totalTemp({totalCost: totalCost.toFixed(2)})
     userDataElem.innerHTML = totalCost2
 })
 
