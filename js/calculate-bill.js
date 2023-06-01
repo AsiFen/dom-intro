@@ -23,19 +23,23 @@ function calculateBtnClicked() {
         var roundedBillTotal = billTotal.toFixed(2);
         billTotalElem.innerHTML = roundedBillTotal;
     }
-
-    if (billTotal >= 30){
-        // adding the danger class will make the text red
-        billTotalElem.classList.add("danger");
-        billTotalElem.classList.remove("warning");
-    }
-    else if (billTotal >= 20){
-        billTotalElem.classList.add("warning");
+    if (billTotal < 20) {
         billTotalElem.classList.remove("danger");
+        billTotalElem.classList.remove("warning");
+
+    }
+    if (billTotal >= 30) {
+        // adding the danger class will make the text red
+        billTotalElem.classList.remove("warning");
+        billTotalElem.classList.add("danger");
+    }
+    else if (billTotal >= 20) {
+        billTotalElem.classList.remove("danger");
+        billTotalElem.classList.add("warning");
     }
 }
 
-function refreshInput (){
+function refreshInput() {
     billTotalElem.innerHTML = "0.00";
     billStringElem.value = '';
     billTotal = '';

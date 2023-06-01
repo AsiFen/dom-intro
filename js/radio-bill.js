@@ -41,6 +41,7 @@ function btnAddClicked() {
     if (totalCost >= 50){
         // adding the danger class will make the text red
         totalElem2.classList.add("danger");
+        
     }
     else if (totalCost >= 30){
         totalElem2.classList.add("warning");
