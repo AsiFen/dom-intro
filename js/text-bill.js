@@ -42,10 +42,10 @@ function texBillTotal() {
 
     if (totalCost >= 50) {
         // adding the danger class will make the text red
-        totalElem.classList.add("danger");
+        userDataHTML.classList.add("danger");
     }
     else if (totalCost >= 30) {
-        totalElem.classList.add("warning");
+        userDataHTML.classList.add("warning");
     }
 }
 
@@ -53,21 +53,16 @@ function texBillTotal() {
 
 
 function clearClicked() {
+    
     callTotalElem.innerHTML = '0.00';
     smsTotalElem.innerHTML = '0.00';
-    // totalElem.innerHTML = '0.00';
 
 }
 btnToClear.addEventListener("click", clearClicked);
-//in the event listener check if the value in the bill type textbox is 'sms' or 'call'
-// * add the appropriate value to the running total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen
+
 addBillBtn.addEventListener('click', texBillTotal);
 document.addEventListener('DOMContentLoaded', function () {
     var getTotal = templateFunction({totalCosts: totalCost})
-    // console.log(getTotal)
-    // console.log(totalCost);
-    // console.log({totalCosts});
+ 
     userDataHTML.innerHTML = getTotal
 })

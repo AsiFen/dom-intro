@@ -47,21 +47,17 @@ function btnAddClicked() {
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
     var totalCost2 = totalTemp({totalCost: totalCost.toFixed(2)})
     userDataElem.innerHTML = totalCost2
 })
-
 
 function clear(){
     callTotalElem2.innerHTML ="0.00"; 
     smsTotalElem2.innerHTML ="0.00";
     totalElem2.innerHTML ="0.00";
 }
+
 refresh.addEventListener("click", clear);
-//in the event listener get the value from the billItemTypeRadio radio buttons
-// * add the appropriate value to the running total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen
+
 btnAddBill.addEventListener("click", btnAddClicked);
